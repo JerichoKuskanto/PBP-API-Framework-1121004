@@ -14,8 +14,9 @@ import (
 func main() {
 	// router := mux.NewRouter()
 	// router.HandleFunc("/users", controllers.GetAllUser).Methods("GET")
-	// router.HandleFunc("/products", controllers.GetAllProduct).Methods("GET")
-	// router.HandleFunc("/transactions", controllers.GetAllTransaction).Methods("GET")
+	// router.HandleFunc("/insertuser", controllers.InsertUser).Methods("POST")
+	// router.HandleFunc("/updateuser/{idUser}", controllers.UpdateUser).Methods("PUT")
+	// router.HandleFunc("/deleteuser/{idUser}", controllers.DeleteUser).Methods("DELETE")
 	m := martini.Classic()
 
 	m.Group("/users", func(r martini.Router) {
