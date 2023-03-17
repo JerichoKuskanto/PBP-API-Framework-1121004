@@ -1,12 +1,10 @@
 package main
 
 import (
-	"Modul-2/controllers"
+	"Martini/controllers"
 	"fmt"
 	"log"
 	"net/http"
-
-	// "Modul-2/controllers"
 
 	_ "github.com/go-sql-driver/mysql"
 	// "github.com/gorilla/mux"

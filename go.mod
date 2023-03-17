@@ -1,4 +1,4 @@
-module Modul-2
+module Martini
 
 go 1.19
 
