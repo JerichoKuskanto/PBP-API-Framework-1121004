@@ -7,7 +7,7 @@ type User struct {
 	Address  string `json:"address"`
 	Email    string `json:"email"`
 	Password string `json:"password"`
-	userType string `json:"userType"`
+	UserType string `json:"userType"`
 }
 
 type UserResponse struct {
