@@ -34,8 +34,12 @@ func GetAllUser(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(users)
+	w.Header().Set("Content-Type", "application/")
+	err2 := json.NewEncoder(w).Encode(response)
+	if err2 != nil {
+		log.Println(err2)
+		fmt.Println(err2)
+	}
 }
 
 // Insert User...
@@ -74,7 +78,11 @@ func InsertUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	err2 := json.NewEncoder(w).Encode(response)
+	if err2 != nil {
+		log.Println(err2)
+		fmt.Println(err2)
+	}
 }
 
 // Update User...
@@ -122,7 +130,11 @@ func UpdateUser(params martini.Params, w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	err2 := json.NewEncoder(w).Encode(response)
+	if err2 != nil {
+		log.Println(err2)
+		fmt.Println(err2)
+	}
 }
 
 // Delete User
@@ -152,7 +164,11 @@ func DeleteUser(params martini.Params, w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	err2 := json.NewEncoder(w).Encode(response)
+	if err2 != nil {
+		log.Println(err2)
+		fmt.Println(err2)
+	}
 }
 
 func sendErrorResponse(w http.ResponseWriter, message string) {
@@ -161,5 +177,9 @@ func sendErrorResponse(w http.ResponseWriter, message string) {
 	response.Message = message
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	err2 := json.NewEncoder(w).Encode(response)
+	if err2 != nil {
+		log.Println(err2)
+		fmt.Println(err2)
+	}
 }
