@@ -33,7 +33,12 @@ func GetAllUser(w http.ResponseWriter, r *http.Request) {
 			users = append(users, user)
 		}
 	}
-
+	
+	var response UsersResponse
+	response.Status = 200
+	response.Message = "Success"
+	response.Data = users
+	
 	w.Header().Set("Content-Type", "application/")
 	err2 := json.NewEncoder(w).Encode(response)
 	if err2 != nil {
