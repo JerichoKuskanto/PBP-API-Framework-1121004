@@ -26,7 +26,7 @@ func GetAllUser(w http.ResponseWriter, r *http.Request) {
 	var user User
 	var users []User
 	for rows.Next() {
-		if err := rows.Scan(&user.ID, &user.Name, &user.Age, &user.Address, &user.Email, &user.Password, &user.userType); err != nil {
+		if err := rows.Scan(&user.ID, &user.Name, &user.Age, &user.Address, &user.Email, &user.Password, &user.UserType); err != nil {
 			log.Println(err)
 			return
 		} else {
