@@ -33,12 +33,12 @@ func GetAllUser(w http.ResponseWriter, r *http.Request) {
 			users = append(users, user)
 		}
 	}
-	
+
 	var response UsersResponse
 	response.Status = 200
 	response.Message = "Success"
 	response.Data = users
-	
+
 	w.Header().Set("Content-Type", "application/")
 	err2 := json.NewEncoder(w).Encode(response)
 	if err2 != nil {
@@ -73,13 +73,15 @@ func InsertUser(w http.ResponseWriter, r *http.Request) {
 	)
 
 	var response ErrorResponse
-	if errQuery == nil {
+	if age <= 0 {
+		if errQuery != nil {
+			fmt.Println(errQuery)
+			response.Status = 400
+			response.Message = "Insert Failed!"
+		}
+	} else {
 		response.Status = 200
 		response.Message = "Success"
-	} else {
-		fmt.Println(errQuery)
-		response.Status = 400
-		response.Message = "Insert Failed!"
 	}
 
 	w.Header().Set("Content-Type", "application/json")
